@@ -8,4 +8,4 @@ _Grupo A UTN - Curso de FullStack con Reack_
 * **David Zuan** - *Rol* - [correo]()
 * **Guillermo Pohle** - *Rol* - [correo]()
 * **Matias Valenti** - *Rol* - [correo]()
-* **Melodi Marisel Romero** - *Rol* - [correo]()
+* **Melodi Marisel Romero** - *Rol* - [melodimarisel@gmail.com]()
