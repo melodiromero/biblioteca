@@ -6,6 +6,6 @@ Proyecto de desarrollo backend para una biblioteca. (Grupo A UTN)
 _Grupo A UTN - Curso de FullStack con Reack_
 
 * **David Zuan** - *Rol* - [correo]()
-* **Guillermo Pohle** - *Rol* - [correo]()
+* **Guillermo Pohle** - *Rol* - [guipolar@gmail.com]()
 * **Matias Valenti** - *Rol* - [correo]()
 * **Melodi Marisel Romero** - *Rol* - [melodimarisel@gmail.com]()
