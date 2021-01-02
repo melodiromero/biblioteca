@@ -1,0 +1,19 @@
+{
+  "name": "Grupo A TP integrador",
+  "version": "1.0.0",
+  "description": "Trabajo Grupal",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"probando probando 1,2,3...\" && exit 1",
+    "start": "node app"
+  },
+  "author": "Grupo A",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.16"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
