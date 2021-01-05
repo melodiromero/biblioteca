@@ -15,6 +15,12 @@ const port      = 3000;
 
 app.use(express.json()); // Permite el mapeo de la peticion json a objeto javascript.
 
+/** Primer nivel ruteo */
+app.use('/categorias', categoriasRuta);
+app.use('/personas', personasRuta);
+app.use('/libros', librosRuta);
+
+
 // *** Conexion con la BD
 const conexion  = mysql.createConnection({
     host:       'localhost',
@@ -34,15 +40,7 @@ conexion.connect((error)=> {
 const qy = util.promisify(conexion.query).bind(conexion); // Permite el uso de asyn away en la conexión mysql.
 
 
-
-
-/** Primer nivel ruteo */
-app.use('/categorias', categoriasRuta);
-app.use('/personas', personasRuta);
-app.use('/libros', librosRuta);
-
-
-/*mail
+/*
 var nodemailer = require('nodemailer');
 
 app.use(express.static("form"));
@@ -86,7 +84,9 @@ transporter.sendMail(mailOptions, function(error, info) {
 */
 
 app.listen(port, function() {
+
     console.log('escuchando fuerte y claro en el puerto', port);
+
     });
 
 
