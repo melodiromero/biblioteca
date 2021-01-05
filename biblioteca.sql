@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-01-2021 a las 02:31:58
+-- Tiempo de generación: 05-01-2021 a las 02:37:26
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
@@ -43,7 +43,7 @@ CREATE TABLE `libros` (
   `nombre` varchar(255) NOT NULL,
   `descripcion` text NOT NULL,
   `categoria_id` int(11) NOT NULL,
-  `persona_id` int(11) NOT NULL
+  `persona_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -57,7 +57,7 @@ CREATE TABLE `personas` (
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
   `email` int(11) NOT NULL,
-  `alias` int(11) NOT NULL
+  `alias` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
