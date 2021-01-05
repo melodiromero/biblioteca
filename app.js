@@ -10,8 +10,10 @@ var categoriasRuta  = require('./routers/categorias');
 var personasRuta    = require('./routers/personas');
 var librosRuta      = require('./routers/libros');
 
-var app         = express();
+const app       = express();
 const port      = 3000;
+
+app.use(express.json()); // Permite el mapeo de la peticion json a objeto javascript.
 
 /** Primer nivel ruteo */
 app.use('/categorias', categoriasRuta);
@@ -38,7 +40,7 @@ conexion.connect((error)=> {
 const qy = util.promisify(conexion.query).bind(conexion); // Permite el uso de asyn away en la conexión mysql.
 
 
-/*mail
+/*
 var nodemailer = require('nodemailer');
 
 app.use(express.static("form"));
@@ -82,7 +84,9 @@ transporter.sendMail(mailOptions, function(error, info) {
 */
 
 app.listen(port, function() {
-    console.log('escuchando fuerte y claro en el puerto ');
+
+    console.log('escuchando fuerte y claro en el puerto', port);
+
     });
 
 
