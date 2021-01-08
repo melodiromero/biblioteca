@@ -195,14 +195,26 @@ app.post('/libro', async(req, res)=>{
 
         let respuesta = await qy(query, [req.body.categoria_id]);
         
-        if (respuesta.length === 0) { //Valido que no exista una persona con ese nombre en la bd.
+        if (respuesta.length === 0) { //Valido que no exista una categoria con ese id en la bd.
             throw new Error('Error, no existe la categoria indicada.');
         }
      
         
         let persona = null;
-        if (req.body.persona_id){
-            persona = req.body.persona_id;
+        if (req.body.persona_id){ // Si el usuario ingresa la persona, se valida que la misma exista en la bd.
+            
+            query = 'SELECT id FROM personas WHERE id = ?  ';
+
+            respuesta = await qy(query, [req.body.persona_id]);
+            
+            if (respuesta.length === 0) { //Valido que no exista una persona con ese id en la bd.
+                throw new Error('Error, no existe la persona indicada.');
+            }else{
+                 
+                persona = req.body.persona_id;
+            }
+            
+           
         }
 
         //Si pasan las validaciones, guardo la persona:
@@ -256,8 +268,20 @@ app.put('/libro/:id', async(req, res)=>{
 
       
         let persona = null;
-        if (req.body.persona_id){
-            persona = req.body.persona_id;
+        if (req.body.persona_id){ // Si el usuario ingresa la persona, se valida que la misma exista en la bd.
+            
+            query = 'SELECT id FROM personas WHERE id = ?  ';
+
+            respuesta = await qy(query, [req.body.persona_id]);
+            
+            if (respuesta.length === 0) { //Valido que no exista una persona con ese id en la bd.
+                throw new Error('Error, no existe la persona indicada.');
+            }else{
+                 
+                persona = req.body.persona_id;
+            }
+            
+           
         }
 
        //Si pasan las validaciones, modifico el libro:
