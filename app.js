@@ -7,13 +7,13 @@ const jwt       = require('jsonwebtoken'); // Para las sesiones - autenticacion
 const unless    = require('express-unless'); // Para determinar que rutas vale el Middleware
 const mysql     = require('mysql');
 const util      = require('util');
-
+const cors      = require('cors');
 const app       = express();
-const port = process.env.PORT ? process.env.PORT : 3000; // puerto de la computadora (de mi servidor).
+const port = process.env.PORT ? process.env.PORT : 3016; // puerto de la computadora (de mi servidor).
 
 app.use(express.static("form"));
 app.use(express.json());            // Permite el mapeo de la peticion json a objeto javascript.
-
+app.use(cors({origin: "http://localhost:3016"}));
 app.use(express.urlencoded())       // Para cuando recibis info de un formulario.
 
 
