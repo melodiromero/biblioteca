@@ -4,10 +4,9 @@
   "description": "Trabajo Grupal",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"probando probando 1,2,3...\" && exit 1",
     "start": "node app"
   },
-  "author": "Grupo A",
+  "author": "grupoa",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
